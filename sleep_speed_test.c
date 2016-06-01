@@ -1,0 +1,36 @@
+#include <stdio.h>
+#include <time.h>
+#include <math.h>
+
+// Compile with gcc -lrt -lm -o test_clock test_clock.c
+
+#define CLOCK CLOCK_MONOTONIC
+
+int main(int argc, char** argv) {
+    double temp, elapsed;
+    int j;
+    struct timespec requestStart, requestEnd, req;
+
+    // Pseudo-sleep
+    clock_gettime(CLOCK, &requestStart);
+    temp = 0;
+    //for(j=0; j < 1; j++)
+        //temp += sin(j);
+    clock_gettime(CLOCK, &requestEnd);
+    elapsed = ( requestEnd.tv_sec - requestStart.tv_sec ) / 1e-6
+                 + ( requestEnd.tv_nsec - requestStart.tv_nsec ) / 1e3;
+    printf("Elapsed: %lf us\n", elapsed);
+
+    // Nanosleep
+    clock_gettime(CLOCK, &requestStart);
+    //req.tv_nsec = 5000;
+    //req.tv_sec = 0;
+    //clock_nanosleep(CLOCK, 0, &req, NULL);
+    usleep(1);
+    clock_gettime(CLOCK, &requestEnd);
+    elapsed = ( requestEnd.tv_sec - requestStart.tv_sec ) / 1e-6
+                 + ( requestEnd.tv_nsec - requestStart.tv_nsec ) / 1e3;
+
+    printf("Elapsed: %lf us\n", elapsed);
+
+}
