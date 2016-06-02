@@ -53,7 +53,7 @@ The arduino has a timer on it that can cause an interrupt. To get access to this
 
 Documentation of TimerOne: http://playground.arduino.cc/Code/Timer1
 
-# Getting my code to work
-currently, my code contains the arduino libraries I was using and the c code for the raspberry pi. 
+# State of the Project
+currently, my code contains the arduino libraries I was using and the c code for the raspberry pi. A lot of the files are testing differnet aspects of the connection between the arduino and raspberry pi. Nothing can really pass as the end project and there is a lot of commented out code that was switch on and off for debugging purposes.  
 
 
