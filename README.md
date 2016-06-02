@@ -1,13 +1,34 @@
 # Syncronized_LED_Strip
 The purpose of this project is to sync LED Strip colors to music. I wanted this to be portable and small, so I chose to design it for the Raspberry PI. The end goal is that given a mp3, and a file of led timings, the led will change color when the music reaches the specified time. This project used a lot of different things, and I highly suggest trying each one on its own before combining them to make the final project.
 
+## Required Hardware
+1. Raspberry Pi 2 ( or better)
+2. Raspberry PI dac (optional to test project, necessary to play good sound)
+3. Arduino Uno with USB cable
+4. Breadboard
+5. Wires
+6. Raspberry PI 2 GPIO to breadboard
+7. male 2x20 pin header if using hifiberry dac (and a way to solder on the header)
+8. Led strip, any size. (50 - 60 led is probably best for testing)
+9. USB power for raspberry pi.
+10. Monitor/Tv for raspberry pi
+11. A development computer to load arduino code/ make raspberry pi OS images.
+12. headphone/earbuds/speakers to test raspberry pi sound output.
+13. Possibly audio connector adapters to get from the dac to speakers. 
+14. HDMI cable
+15. Ethernet for the raspberry pi will make your life easier, or the built-in wifi in the rpi 3 "should" be easy enough.
+
 ## Raspberry PI
 Pinout:
 http://www.raspberrypi-spy.co.uk/wp-content/uploads/2012/06/Raspberry-Pi-GPIO-Layout-Model-B-Plus-rotated-2700x900.png
 
 The raspberry pi is a small computer that runs a non-real time operating system. This means that timings of changing the led strip cannot be garenteed and will fluctuate. In order to handle this, the timing is enforced by the Arduino. Data will be buffered on some level, so that the jitters of the Raspberry pi do not cause pauses or bursts in the visual playback. 
 
-The operating system of choice is Raspbian, specifically the lite version as a gui is not needed. All code can either be typed into the terminal, or transfered to the pi using things such as git or rsync. 
+The operating system of choice is Raspbian, specifically the lite version as a gui is not needed. All code can either be typed into the terminal, or transfered to the pi using things such as git or rsync.
+
+After you get Raspbian-lite installed on a micro sd card and the rpi boots from it, you need to expand the file system before installing anything else. If you don't do this, you will run out of storage space, and you will need to delete files in order to delete programs in order to expand the file system.
+
+
 
 ## Arduino
 
