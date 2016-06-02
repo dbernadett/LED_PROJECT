@@ -72,6 +72,8 @@ Hello World Tutorial: http://mitchtech.net/raspberry-pi-arduino-spi/
 
 The arduino has a timer on it that can cause an interrupt. To get access to this timer from arduino code, you need to add this library. 
 
+This timing is used to update the led strip at regular intervals (frames). For the LED's I found a framerate at or above 45 hz to be the best, as flickering was still noticable at 30 hz.
+
 Documentation of TimerOne: http://playground.arduino.cc/Code/Timer1
 
 # State of the Project
